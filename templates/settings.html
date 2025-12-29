@@ -1,6 +1,6 @@
-<html lang="en-US">
+<html lang="zh-CN">
   <head>
-    <title>Bus Servos Initialization Setup</title>
+    <title>总线舵机初始化设置</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
@@ -15,74 +15,74 @@
     <main>
         <div class="setting box_outline">
             <section class="setting_sc">
-              <p>For the first time use of this Pan-Tilt, you will need to follow these steps to config the servos' ID and middle position:</p>
-              <p class="t_special"><span class="t_light t_bg_black">Tilt Servo ID: 1</span><span class="t_light t_bg_black">Pan Servo ID: 2</span></p>
-              <p>The default ID of the Tilt Servo and Pan Servo is both 1 at the beginning, but the ID of the Pan Servo should be set to 2</p>
+              <p>首次使用此云台时，您需要按照以下步骤配置舵机 ID 和中位：</p>
+              <p class="t_special"><span class="t_light t_bg_black">俯仰舵机 ID: 1</span><span class="t_light t_bg_black">平移舵机 ID: 2</span></p>
+              <p>俯仰舵机和平移舵机的默认 ID 初始都为 1，但平移舵机的 ID 需要设置为 2</p>
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">1</div>
-                <p>Disconnect the wire of the Tilt Servo, make sure you are setting the ID of Pan Servo.</p>
+                <p>断开俯仰舵机的连线，确保您正在设置平移舵机的 ID。</p>
               </div>
               <img src="" />
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">2</div>
-                <p>Click the <span class="t_light">[Set Pan ID]</span> button to configure the current servo as Pan Servo, which will set the ID of the Pan Servo as 2.</p>
+                <p>点击 <span class="t_light">[设置平移 ID]</span> 按钮将当前舵机配置为平移舵机，这将把平移舵机的 ID 设置为 2。</p>
               </div>
               <img src="" />
-              <div class="long_btn"><a onclick="confirmSetPanID();">Set Pan ID</a></div>
+              <div class="long_btn"><a onclick="confirmSetPanID();">设置平移 ID</a></div>
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">3</div>
-                <p>Then you can connect the wire of the Tilt Servo back to the Pan-Tilt.</p>
+                <p>然后您可以将俯仰舵机的连线重新连接到云台上。</p>
               </div>
               <img src="" />
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">4</div>
-                <p>Now we can begin to set the middle position and click the <span class="t_light">[Release]</span> button to unlock the torque lock of the two servos.</p>
+                <p>现在我们可以开始设置中位，点击 <span class="t_light">[释放]</span> 按钮解锁两个舵机的扭矩锁。</p>
               </div>
               <img src="" />
-              <div class="long_btn"><a onclick="confirmRelease();">Release</a></div>
+              <div class="long_btn"><a onclick="confirmRelease();">释放</a></div>
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">5</div>
-                <p>As shown in the picture below, manually adjust the angle of the two servos so that the camera is pointed straight ahead.</p>
+                <p>如下图所示，手动调整两个舵机的角度，使摄像头指向正前方。</p>
               </div>
               <img src="" />
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">6</div>
-                <p>Click the <span class="t_light">[Middle Set]</span> button to set the current position as the middle position.</p>
+                <p>点击 <span class="t_light">[设置中位]</span> 按钮将当前位置设置为中位。</p>
               </div>
               <img src="" />
-              <div class="long_btn"><a onclick="confirmMiddleSet();">Middle Set</a></div>
+              <div class="long_btn"><a onclick="confirmMiddleSet();">设置中位</a></div>
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">7</div>
-                <p>Then you can begin to test the Pan-Tilt to turn to different angles. and check whether it can work normally.</p>
+                <p>然后您可以开始测试云台转动到不同角度，检查其是否正常工作。</p>
               </div>
               <img src="" />
             </section>
             <section class="setting_sc setting_sc_step">
               <div>
                 <div class="step_num">8</div>
-                <p>if the Pan-Tilt is not operating normally, you may try to redo the whole process again.</p>
+                <p>如果云台工作不正常，您可以尝试重新进行整个过程。</p>
               </div>
               <img src="" />
-              <p>Note: If you didn't disconnect the Tilt Servo in step 1, then both servo IDs will be set to 2 after you click the <span class="t_light">[Set Pan ID]</span> button. In this case, you need to click <span class="t_light">[Set Tilt ID]</span> to restore both servo IDs to 1, then repeat the entire setup process!</p>
-              <div class="long_btn"><a onclick="confirmSetTiltID();">Set Tilt ID</a></div>
+              <p>注意：如果您在第 1 步没有断开俯仰舵机，点击 <span class="t_light">[设置平移 ID]</span> 按钮后，两个舵机的 ID 都会被设置为 2。在这种情况下，您需要点击 <span class="t_light">[设置俯仰 ID]</span> 将两个舵机 ID 恢复为 1，然后重复整个设置过程！</p>
+              <div class="long_btn"><a onclick="confirmSetTiltID();">设置俯仰 ID</a></div>
             </section>
         </div>
         <div class="long_btn">
-          <a href="./"><span>&lt;&nbsp;</span>Index Page</span></a>
+          <a href="./"><span>&lt;&nbsp;</span>主页</span></a>
       </div>
     </main>
 </body>

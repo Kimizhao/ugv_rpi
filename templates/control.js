@@ -684,13 +684,13 @@ socket.on('update', function(data) {
         removeButtonsClass(lbuttons);
         light_mode = data[led_mode];
         if (data[led_mode] == 0) {
-            lightMode.innerHTML = "OFF";
+            lightMode.innerHTML = "关闭";
             lbuttons[0].classList.add("ctl_btn_active");
         } else if (data[led_mode] == 1) {
-            lightMode.innerHTML = "AUTO";
+            lightMode.innerHTML = "自动";
             lbuttons[1].classList.add("ctl_btn_active");
         } else if (data[led_mode] == 2) {
-            lightMode.innerHTML = "ON";
+            lightMode.innerHTML = "开启";
             lbuttons[2].classList.add("ctl_btn_active");
         }
 
