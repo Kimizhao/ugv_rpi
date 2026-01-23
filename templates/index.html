@@ -1,6 +1,6 @@
 <html lang="zh-CN">
   <head>
-    <title>微雪机器人</title>
+    <title>小智机器人</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="./jquery-3.7.1.min.js"></script>
@@ -266,6 +266,13 @@
                             <div id="base_led_ctrl_btn">
                                 <div><button onclick="cmdSend(base_of,0,0);" class="ctl_btn">底盘灯关</button></div>
                                 <div><button onclick="cmdSend(base_on,0,0);" class="ctl_btn">底盘灯开</button></div>
+                            </div>
+                        </div>
+                        <div>  
+                            <h2 class="sc_title feed_ct_tt">升降杆控制</h2>
+                            <div id="lift_ctrl_btn">
+                                <div><button onmousedown="cmdSend(lift_up,0,0);" onmouseup="cmdSend(lift_stop,0,0);" ontouchstart="cmdSend(lift_up,0,0);" ontouchend="cmdSend(lift_stop,0,0);" class="ctl_btn">上升</button></div>
+                                <div><button onmousedown="cmdSend(lift_down,0,0);" onmouseup="cmdSend(lift_stop,0,0);" ontouchstart="cmdSend(lift_down,0,0);" ontouchend="cmdSend(lift_stop,0,0);" class="ctl_btn">下降</button></div>
                             </div>
                         </div>
                         <div class="long_btn new_page" id="open_jupyter" style="display: none;">

@@ -10,6 +10,7 @@ var mp_face, mp_pose;
 var re_none, re_capt, re_reco, led_off, led_aut, led_ton, base_of, base_on;
 var head_ct, base_ct;
 var s_panid, release, set_mid, s_tilid;
+var lift_up, lift_down, lift_stop;
 var armZ, armR, armE;
 
 var detect_type, led_mode, detect_react, picture_size, video_size, cpu_load;
@@ -84,6 +85,10 @@ fetch('/config')
       release = yamlObject.code.release;
       set_mid = yamlObject.code.set_mid;
       s_tilid = yamlObject.code.s_tilid;
+
+      lift_up = yamlObject.code.lift_up;
+      lift_down = yamlObject.code.lift_down;
+      lift_stop = yamlObject.code.lift_stop;
 
       detect_type = yamlObject.fb.detect_type;
       led_mode    = yamlObject.fb.led_mode;

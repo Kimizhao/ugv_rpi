@@ -65,6 +65,9 @@ code:
   zoom_x1: 10104
   zoom_x2: 10105
   zoom_x4: 10106
+  lift_up: 10601
+  lift_down: 10602
+  lift_stop: 10603
 cv:
   aimed_error: 8
   color_lower:
@@ -102,6 +105,10 @@ sbc_config:
   disabled_http_log: true
   feedback_interval: 0.001
 video:
-  default_quality: 20
-  default_res_h: 480
-  default_res_w: 640
+  default_quality: 90
+  default_res_h: 1924
+  default_res_w: 2592
+
+login_config:
+  username: admin
+  password: 1234567890
