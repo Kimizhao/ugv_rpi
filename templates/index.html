@@ -1,5 +1,6 @@
 <html lang="zh-CN">
-  <head>
+
+<head>
     <title>小智机器人</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -9,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <style type="text/css">
     </style>
-  </head>
+</head>
+
 <body>
     <main>
         <div class="box1">
@@ -32,8 +34,11 @@
                                     </div>
                                     <div class="feed feed_r_t">
                                         <div>
-                                            <div class="feed_ico_baterry"><span id="b_state" class="baterry_state baterry_state1"></span><span id="v_in">12</span><span> V</span></div>
-                                            <div class="feed_ico_light"><span class="light_state"></span><span id="MODE">AUTO</span></div>
+                                            <div class="feed_ico_baterry"><span id="b_state"
+                                                    class="baterry_state baterry_state1"></span><span
+                                                    id="v_in">12</span><span> V</span></div>
+                                            <div class="feed_ico_light"><span class="light_state"></span><span
+                                                    id="MODE">AUTO</span></div>
                                             <p><span>RSSI: </span><span id="rssi">0</span></p>
                                             <p><span>FPS: </span><span id="fps">0</span></p>
                                             <p><span>TEMP: </span><span id="tem">0</span></p>
@@ -49,10 +54,14 @@
                                                 <div class="tilt_pointer"></div>
                                                 <p id="Tilt">0</p>
                                             </div>
-                                            <div id="tilt_scale" class="tilt_scale"><div id="tilt_scalediv"></div></div>
+                                            <div id="tilt_scale" class="tilt_scale">
+                                                <div id="tilt_scalediv"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="feed feed_m"><div class="feed_img_focus"></div></div>
+                                    <div class="feed feed_m">
+                                        <div class="feed_img_focus"></div>
+                                    </div>
                                     <div class="feed feed_r"></div>
                                 </div>
                             </div>
@@ -65,7 +74,9 @@
                                     </div>
                                     <div class="feed feed_b">
                                         <div class="pan">
-                                            <div><p id="Pan">0</p></div>
+                                            <div>
+                                                <p id="Pan">0</p>
+                                            </div>
                                             <div class="pan_scale_box">
                                                 <div class="pan_pointer"></div>
                                                 <div id="pan_scale" class="pan_scale"></div>
@@ -88,12 +99,19 @@
                 </div>
                 <div class="video_ctrl">
                     <div>
-                        <div class="record"><div><button id="record-btn" class="normal_btn video_btn_record btn_ico">录制</button></div></div>
-                        <div class="capture"><div><button class="normal_btn video_btn_capture" onclick="captureAndUpdate()"></button></div></div>
+                        <div class="record">
+                            <div><button id="record-btn" class="normal_btn video_btn_record btn_ico">录制</button></div>
+                        </div>
+                        <div class="capture">
+                            <div><button class="normal_btn video_btn_capture" onclick="captureAndUpdate()"></button>
+                            </div>
+                        </div>
                         <div class="views">
-                            <div><button class="normal_btn normal_btn_size video_btn_zoom btn_ico" id="zoom_btn"></button></div>
+                            <div><button class="normal_btn normal_btn_size video_btn_zoom btn_ico"
+                                    id="zoom_btn"></button></div>
                             <div class="video_btn_px_select">
-                                <button id="video_pixel_btn" class="normal_btn normal_btn_size video_btn_px">WebRTC</button>
+                                <button id="video_pixel_btn"
+                                    class="normal_btn normal_btn_size video_btn_px">WebRTC</button>
                                 <ul id="video_pixel_btn_list">
                                     <!-- <li class="normal_btn" onclick="cmdSend(max_res,2,0);">960P</li>
                                     <li class="normal_btn" onclick="cmdSend(mid_res,1,0);">480P</li>
@@ -109,66 +127,64 @@
                             <div class="ctl9_middle_pos">
                                 <div class="ctl9_middle_pos ctl9_middle_light">
                                     <div class="ctl9_middle_pos">
-                                        <div 
-                                            onmousedown="cmdSend(head_ct,0,0);" 
-                                            ontouchstart="cmdSend(head_ct,0,0);" 
+                                        <div onmousedown="cmdSend(head_ct,0,0);" ontouchstart="cmdSend(head_ct,0,0);"
                                             onmouseup="cmdSend(head_ct,0,0);" ontouchend="cmdSend(head_ct,0,0);">
-                                        功能</div>
+                                            功能</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ctl9 ctl9_base">
                             <ul>
-                                <li class="ctl9_base_btn" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':slow_speed,'R':max_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':slow_speed,'R':max_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+                                <li class="ctl9_base_btn"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':slow_speed,'R':max_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':slow_speed,'R':max_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
 
-                                <li class="ctl9_base_btn2" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':max_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':max_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+                                <li class="ctl9_base_btn2"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':max_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':max_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
 
-                                <li class="ctl9_base_btn" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':slow_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':slow_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
-                                
-                                <li class="ctl9_base_btn4" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':max_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':max_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
-                                
+                                <li class="ctl9_base_btn"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':slow_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':slow_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+
+                                <li class="ctl9_base_btn4"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':max_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':max_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+
                                 <li class="ctl9_base_btn"></li>
-                                
-                                <li class="ctl9_base_btn6" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':-max_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':-max_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
-                                
-                                <li class="ctl9_base_btn" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-slow_speed,'R':-max_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-slow_speed,'R':-max_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
-                                
-                                <li class="ctl9_base_btn8" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-max_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-max_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
-                                
-                                <li class="ctl9_base_btn" 
-                                onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-slow_speed});" 
-                                ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-slow_speed});" 
-                                onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});" 
-                                ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+
+                                <li class="ctl9_base_btn6"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':-max_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':max_speed,'R':-max_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+
+                                <li class="ctl9_base_btn"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-slow_speed,'R':-max_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-slow_speed,'R':-max_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+
+                                <li class="ctl9_base_btn8"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-max_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-max_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
+
+                                <li class="ctl9_base_btn"
+                                    onmousedown="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-slow_speed});"
+                                    ontouchstart="cmdJsonCmd({'T':cmd_movition_ctrl,'L':-max_speed,'R':-slow_speed});"
+                                    onmouseup="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"
+                                    ontouchend="cmdJsonCmd({'T':cmd_movition_ctrl,'L':0,'R':0});"></li>
                             </ul>
                         </div>
                     </div>
@@ -182,7 +198,9 @@
                                     <li>1<span class="audioplay"></span><span>Drop audio files here.mp3</span></li>
                                 </ol>-->
                             </div>
-                            <div style="visibility: hidden;" id="stopButton" class="pause"><div></div></div>
+                            <div style="visibility: hidden;" id="stopButton" class="pause">
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +208,8 @@
                     <div class="code_input">
                         <div>
                             <textarea type="text" id="commandInput" placeholder="输入指令"></textarea>
-                            <div><button id="sendButton" class="normal_btn normal_btn_size normal_btn_w">发送</button></div>
+                            <div><button id="sendButton" class="normal_btn normal_btn_size normal_btn_w">发送</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,39 +217,47 @@
             <section class="section_feed_ctrl box_outline">
                 <div>
                     <div class="feed_ctrl_btn">
-                        <div>  
+                        <div>
                             <h2 class="sc_title feed_ct_tt">速度控制</h2>
                             <div id="speed_ctrl_btn">
-                                <div><button onclick="speedCtrl(min_rate);" class="ctl_btn ctl_btn_active">慢速</button></div>
+                                <div><button onclick="speedCtrl(min_rate);" class="ctl_btn ctl_btn_active">慢速</button>
+                                </div>
                                 <div><button onclick="speedCtrl(mid_rate);" class="ctl_btn">中速</button></div>
                                 <div><button onclick="speedCtrl(max_rate);" class="ctl_btn">快速</button></div>
                             </div>
                         </div>
-                        <div>  
+                        <div>
                             <h2 class="sc_title feed_ct_tt">云台 稳定/回正</h2>
                             <div id="steady_ctrl_btn">
-                                <div><button onclick="steadyCtrl(0, stickSendY);" class="ctl_btn ctl_btn_active">关闭</button></div>
+                                <div><button onclick="steadyCtrl(0, stickSendY);"
+                                        class="ctl_btn ctl_btn_active">关闭</button></div>
                                 <div><button onclick="steadyCtrl(1, stickSendY);" class="ctl_btn">开启</button></div>
                                 <div><button onclick="lookAhead();" class="ctl_btn">回正</button></div>
                             </div>
                         </div>
-                        <div style="display: none;">  
+                        <div style="display: none;">
                             <h2 class="sc_title feed_ct_tt">简单检测类型</h2>
                             <div id="d_type_btn">
-                                <div><button onclick="cmdSend(cv_none,0,0);" class="ctl_btn ctl_btn_active">无</button></div>
-                                <div><button onclick="cmdSend(cv_moti,1,0);" class="ctl_btn ctl_btn_mov btn_ico">运动</button></div>
-                                <div><button onclick="cmdSend(cv_face,2,0);" class="ctl_btn ctl_btn_faces btn_ico">人脸</button></div>
+                                <div><button onclick="cmdSend(cv_none,0,0);" class="ctl_btn ctl_btn_active">无</button>
+                                </div>
+                                <div><button onclick="cmdSend(cv_moti,1,0);"
+                                        class="ctl_btn ctl_btn_mov btn_ico">运动</button></div>
+                                <div><button onclick="cmdSend(cv_face,2,0);"
+                                        class="ctl_btn ctl_btn_faces btn_ico">人脸</button></div>
                             </div>
                         </div>
-                        <div style="display: none;">  
+                        <div style="display: none;">
                             <h2 class="sc_title feed_ct_tt">简单检测反应</h2>
                             <div id="d_reaction_btn">
-                                <div><button onclick="cmdSend(re_none,0,0);" class="ctl_btn ctl_btn_active">无</button></div>
-                                <div><button onclick="cmdSend(re_capt,0,0);" class="ctl_btn ctl_btn_caputure btn_ico">拍照</button></div>
-                                <div><button onclick="cmdSend(re_reco,0,0);" class="ctl_btn ctl_btn_record btn_ico">录像</button></div>
+                                <div><button onclick="cmdSend(re_none,0,0);" class="ctl_btn ctl_btn_active">无</button>
+                                </div>
+                                <div><button onclick="cmdSend(re_capt,0,0);"
+                                        class="ctl_btn ctl_btn_caputure btn_ico">拍照</button></div>
+                                <div><button onclick="cmdSend(re_reco,0,0);"
+                                        class="ctl_btn ctl_btn_record btn_ico">录像</button></div>
                             </div>
                         </div>
-                        <div style="display: none;">  
+                        <div style="display: none;">
                             <h2 class="sc_title feed_ct_tt">高级视觉控制</h2>
                             <div id="adv_cv_ctrl_btn">
                                 <div><button onclick="cmdSend(mc_lock,0,0);" class="ctl_btn">锁定</button></div>
@@ -238,7 +265,7 @@
                                 <div><button onclick="cmdSend(cv_auto,0,0);" class="ctl_btn">自动驾驶</button></div>
                             </div>
                         </div>
-                        <div style="display: none;">  
+                        <div style="display: none;">
                             <h2 class="sc_title feed_ct_tt">高级视觉功能</h2>
                             <div id="adv_cv_funcs_btn">
                                 <div><button onclick="cmdSend(cv_objs,0,0);" class="ctl_btn">物体</button></div>
@@ -246,37 +273,57 @@
                                 <div><button onclick="cmdSend(mp_hand,0,0);" class="ctl_btn">手势</button></div>
                             </div>
                         </div>
-                        <div style="display: none;">  
+                        <div style="display: none;">
                             <h2 class="sc_title feed_ct_tt">MediaPipe 功能</h2>
                             <div id="mp_funcs_btn">
                                 <div><button onclick="cmdSend(mp_face,0,0);" class="ctl_btn">MP 人脸</button></div>
                                 <div><button onclick="cmdSend(mp_pose,0,0);" class="ctl_btn">MP 姿态</button></div>
                             </div>
                         </div>
-                        <div>  
+                        <div>
                             <h2 class="sc_title feed_ct_tt">车头灯控制</h2>
                             <div id="light_ctrl_btn">
-                                <div><button onclick="cmdSend(led_off,0,0);" class="ctl_btn ctl_btn_active">关闭</button></div>
+                                <div><button onclick="cmdSend(led_off,0,0);" class="ctl_btn ctl_btn_active">关闭</button>
+                                </div>
                                 <div><button onclick="cmdSend(led_aut,0,0);" class="ctl_btn">自动</button></div>
                                 <div><button onclick="cmdSend(led_ton,0,0);" class="ctl_btn">开启</button></div>
                             </div>
                         </div>
-                        <div>  
+                        <div>
+                            <h2 class="sc_title feed_ct_tt">激光红外线控制</h2>
+                            <div id="laser_ctrl_btn">
+                                <div><button onclick="cmdSend(laser_off,0,0);" class="ctl_btn">激光红外线关</button></div>
+                                <div><button onclick="cmdSend(laser_on,0,0);" class="ctl_btn">激光红外线开</button></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sc_title feed_ct_tt">照明灯控制</h2>
+                            <div id="light_ctrl_btn">
+                                <div><button onclick="cmdSend(light_off,0,0);" class="ctl_btn">照明灯关</button></div>
+                                <div><button onclick="cmdSend(light_on,0,0);" class="ctl_btn">照明灯开</button></div>
+                            </div>
+                        </div>
+                        <div>
                             <h2 class="sc_title feed_ct_tt">底盘灯控制</h2>
                             <div id="base_led_ctrl_btn">
                                 <div><button onclick="cmdSend(base_of,0,0);" class="ctl_btn">底盘灯关</button></div>
                                 <div><button onclick="cmdSend(base_on,0,0);" class="ctl_btn">底盘灯开</button></div>
                             </div>
                         </div>
-                        <div>  
+                        <div>
                             <h2 class="sc_title feed_ct_tt">升降杆控制</h2>
                             <div id="lift_ctrl_btn">
-                                <div><button onmousedown="cmdSend(lift_up,0,0);" onmouseup="cmdSend(lift_stop,0,0);" ontouchstart="cmdSend(lift_up,0,0);" ontouchend="cmdSend(lift_stop,0,0);" class="ctl_btn">上升</button></div>
-                                <div><button onmousedown="cmdSend(lift_down,0,0);" onmouseup="cmdSend(lift_stop,0,0);" ontouchstart="cmdSend(lift_down,0,0);" ontouchend="cmdSend(lift_stop,0,0);" class="ctl_btn">下降</button></div>
+                                <div><button onmousedown="cmdSend(lift_up,0,0);" onmouseup="cmdSend(lift_stop,0,0);"
+                                        ontouchstart="cmdSend(lift_up,0,0);" ontouchend="cmdSend(lift_stop,0,0);"
+                                        class="ctl_btn">上升</button></div>
+                                <div><button onmousedown="cmdSend(lift_down,0,0);" onmouseup="cmdSend(lift_stop,0,0);"
+                                        ontouchstart="cmdSend(lift_down,0,0);" ontouchend="cmdSend(lift_stop,0,0);"
+                                        class="ctl_btn">下降</button></div>
                             </div>
                         </div>
                         <div class="long_btn new_page" id="open_jupyter" style="display: none;">
-                            <a target="_blank" style="color: #f5bd5f;" href="/"><span>JupyterLab</span>&nbsp;<span>&gt;</span></a>
+                            <a target="_blank" style="color: #f5bd5f;"
+                                href="/"><span>JupyterLab</span>&nbsp;<span>&gt;</span></a>
                         </div>
                     </div>
                 </div>
@@ -289,7 +336,8 @@
                     <ul id="photo-list">
                     </ul>
                     <div class="long_btn new_page">
-                        <a href="./photo.html"><span>查看照片库页面</span>&nbsp;(<span id="number-photos">0</span>)&nbsp;<span>&gt;</span></a>
+                        <a href="./photo.html"><span>查看照片库页面</span>&nbsp;(<span
+                                id="number-photos">0</span>)&nbsp;<span>&gt;</span></a>
                     </div>
                 </div>
             </section>
@@ -299,7 +347,8 @@
                     <ul class="video-list" id="video-list">
                     </ul>
                     <div class="long_btn new_page">
-                        <a href="./video.html"><span>查看视频文件页面</span>&nbsp;(<span id="number-videos">0</span>)&nbsp;<span>&gt;</span></a>
+                        <a href="./video.html"><span>查看视频文件页面</span>&nbsp;(<span
+                                id="number-videos">0</span>)&nbsp;<span>&gt;</span></a>
                     </div>
                 </div>
             </section>
@@ -307,13 +356,16 @@
                 <div>
                     <h2 id="test" class="sc_title normal_sc_title">总线舵机初始化设置</h2>
                     <div class="long_btn new_page ">
-                        <a class="btn_ico ico_setting" href="./settings.html"><span>设置页面</span>&nbsp;<span>&gt;</span></a>
+                        <a class="btn_ico ico_setting"
+                            href="./settings.html"><span>设置页面</span>&nbsp;<span>&gt;</span></a>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-    <div id="video-del-tips" class="video-del-tips"><p>成功删除视频</p></div>
+    <div id="video-del-tips" class="video-del-tips">
+        <p>成功删除视频</p>
+    </div>
     <footer style="visibility: hidden;">
         <div style="background-image: url('./img/white/record.svg');"></div>
         <div style="background-image: url('./img/white/capture.svg');"></div>
@@ -335,4 +387,5 @@
     <script src="./control.js"></script>
     <script src="./main.js"></script>
 </body>
+
 </html>

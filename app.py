@@ -16,7 +16,7 @@ def is_raspberry_pi5():
 
 
 if is_raspberry_pi5():
-    base = BaseController("/dev/ttyAMA0", 115200)
+    base = BaseController("/dev/ttyAMA4", 115200)
 else:
     base = BaseController("/dev/serial0", 115200)
 
@@ -91,6 +91,12 @@ lift_down_pin = DigitalOutputDevice(26, active_high=False, initial_value=False)
 lift_up_pin.on()
 lift_down_pin.on()
 
+# 激光红外线控制
+laser_pin = DigitalOutputDevice(19, active_high=False, initial_value=False)
+
+# LED
+light_pin = DigitalOutputDevice(16, active_high=False, initial_value=False)
+
 
 def lift_up_start():
     print("Lift Up Start")
@@ -110,10 +116,30 @@ def lift_stop():
     lift_down_pin.on()
 
 
+def laser_off():
+    laser_pin.off()
+
+
+def laser_on():
+    laser_pin.on()
+
+
+def light_off():
+    light_pin.off()
+
+
+def light_on():
+    light_pin.on()
+
+
 cmd_actions = {
     f["code"]["lift_up"]: lift_up_start,
     f["code"]["lift_down"]: lift_down_start,
     f["code"]["lift_stop"]: lift_stop,
+    f["code"]["laser_off"]: laser_off,
+    f["code"]["laser_on"]: laser_on,
+    f["code"]["light_off"]: light_off,
+    f["code"]["light_on"]: light_on,
     f["code"]["zoom_x1"]: lambda: cvf.scale_ctrl(1),
     f["code"]["zoom_x2"]: lambda: cvf.scale_ctrl(2),
     f["code"]["zoom_x4"]: lambda: cvf.scale_ctrl(4),

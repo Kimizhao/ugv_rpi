@@ -68,6 +68,10 @@ code:
   lift_up: 10601
   lift_down: 10602
   lift_stop: 10603
+  light_off: 10604
+  light_on: 10605
+  laser_off: 10606
+  laser_on: 10607
 cv:
   aimed_error: 8
   color_lower:
