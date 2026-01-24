@@ -88,6 +88,8 @@ cvf = cv_ctrl.OpencvFuncs(thisPath, base)
 # Lift control
 lift_up_pin = DigitalOutputDevice(20, active_high=False, initial_value=False)
 lift_down_pin = DigitalOutputDevice(26, active_high=False, initial_value=False)
+lift_up_pin.on()
+lift_down_pin.on()
 
 
 def lift_up_start():
@@ -104,8 +106,8 @@ def lift_down_start():
 
 def lift_stop():
     print("Lift Stop")
-    lift_up_pin.off()
-    lift_down_pin.off()
+    lift_up_pin.on()
+    lift_down_pin.on()
 
 
 cmd_actions = {
